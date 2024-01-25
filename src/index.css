@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: 'Inter', sans-serif !important;
+		font-feature-settings: 'kern' !important;
+		-webkit-font-smoothing: antialiased;
+		letter-spacing: -0.5px;
+	}
+}
+
+input.defaultCheckbox::before {
+	content: url(../src/assets/svg/checked.svg);
+	color: white;
+	opacity: 0;
+	height: 16px;
+	width: 16px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0px);
+}
+
+input:checked.defaultCheckbox::before {
+	opacity: 1;
+}
+
+/* .service-table tr.parent {
+	cursor: pointer;
+} */
+
+.service-table tr.children {
+	display: none;
+}
+
+
+.service-table tr.children.show {
+	display: table-row;
+}
+
+.modal-img-preview img {
+	width: 100% !important;
+	height: auto !important;
+	object-fit: contain;
+}
+
+.modal-btn {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.parent th:first-child {
+	text-align: center;
+	position: relative;
+}
+
+.has-child th:first-child::before {
+	content: "";
+	width: 10px;
+	height: 2px;
+	background-color: #000;
+	position: absolute;
+	top: calc(50% - 1px);
+	left: 12px;
+}
+
+.has-child th:first-child::after {
+	content: "";
+	width: 2px;
+	height: 10px;
+	background-color: #000;
+	position: absolute;
+	top: calc(50% - 5px);
+	left: 16px;
+	transition: all ease-in-out 0.3s;
+}
+
+.has-child.show th:first-child::after {
+	transform: rotate(180deg);
+	opacity: 0;
+}
+
+.has-child {
+	background-color: #f5f5f5;
+}
+
+.css-b62m3t-container{
+	margin-top: 8px;
+}
+
+.css-13cymwt-control, .css-t3ipsp-control {
+	background: #F4F7FE !important;
+	height: 48px !important;
+	border: none !important;
+	border-radius: 0.75rem !important;
+	box-shadow: 0 4px 6px -1px #a79cff, 0 2px 4px -2px #a79cff !important;
+}
